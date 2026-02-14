@@ -1,0 +1,129 @@
+body {
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(#ff9a9e, #fad0c4);
+  text-align: center;
+  color: #fff;
+  height: 100vh;
+  margin: 250x;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+  width: 300px;
+  height: 350px;
+  margin: 20px auto;
+  position: relative;
+}
+
+#game , #surprise{
+  width: 100%;
+}
+
+#play-area {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  margin: 20px auto;
+  border: 2px dashed rgba(255,255,255,0.6);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.cinema-frame {
+  position: relative;
+  width: 360px;
+  height: 430px;
+  margin: 20px auto;
+  background: #000;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.6);
+}
+
+#heart {
+  position: absolute;
+  font-size: 3.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+}
+.vhs-overlay {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.03) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  border-radius: 20px;
+}
+.slideshow {
+  width: 300px;
+  height: 400px;
+  margin: 20px auto;
+  position: relative;
+  border-radius: 20px;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+
+  width: 80%;
+  height: 90%;
+  object-fit: cover;
+  margin:20px auto;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.slide.active {
+  opacity: 1;
+}
+
+.love-note {
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+#ending{
+  margin: 100px auto;
+}
+
+/* 💌 Ending */
+#ending p {
+  margin: 10px 0;
+  font-size: 1.15em;
+}
+
+#envelope {
+  font-size: 4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  animation: wiggle 1.2s infinite;
+}
+
+@keyframes wiggle {
+  0%,100% { transform: rotate(0); }
+  25% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+  75% { transform: rotate(-6deg); }
+}
+
+/* 💖 Heart flood */
+.flood-heart {
+  position: fixed;
+  font-size: 2.2rem;
+  animation: fall 2.5s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  from { transform: translateY(-50px); opacity: 1; }
+  to { transform: translateY(110vh); opacity: 0; }
+}
